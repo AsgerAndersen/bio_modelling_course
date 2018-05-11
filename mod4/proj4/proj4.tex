@@ -1,0 +1,258 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper]{geometry} %page size
+\usepackage{parskip} %no paragraph indentation
+\usepackage{fancyhdr} %fancy stuff in page header
+\pagestyle{fancy} 
+
+\usepackage[utf8]{inputenc} %encoding
+\usepackage[danish]{babel} %danish letters
+
+\usepackage{graphicx} %import pictures
+\graphicspath{ {images/} }
+\usepackage{listings} %make lists
+
+\usepackage{amsmath, amssymb, amsfonts, amsthm, mathtools} %doing math
+\usepackage{algorithmicx, algpseudocode} %doing pseudocode
+
+\title{
+  Title\
+  \large Subtitle
+}
+\author{Asger Andersen}
+\date{\today}
+
+\fancyhead{}
+\lhead{This is the title}
+\rhead{Asger Andersen}
+
+%End of preamble
+%*******************************************************************************
+
+\begin{document}
+
+\section{Opgave 1}
+
+\subsection{Delopgave a}
+
+Jeg udregner det karakteristiske polynomien
+\begin{align}
+\det(M-\lambda E) = \\ 
+(-(a_1 + a_3) - \lambda)(-a_2 - \lambda) - a_1a_2 = \\
+\lambda^2 + (a_1 + a_2 + a_3)\lambda + a_2a_3
+\end{align}
+
+Diskriminanten for dette andengrads polynomien er
+\begin{align}
+(a_1 + a_2 + a_3)^2 - 4a_2a_3 = \\ 
+a_1^2 + a_2^2 + a_3^2 + 2a_1a_2 + 2a_1a_3 - 2a_2a_3 = \\
+a_1^2 + 2a_1a_2 + 2a_1a_3 + (a_2 - a_3)^2
+\end{align}
+Da $a_1,a_2,a_3>0$, er den eneste størrelse, der kunne være negativ i formlen for diskriminanten ovenfor, er størrelsen $a_2 - a_3$. Uanset værdien af $a_2 - a_3$, har vi imidlertid, at $(a_2 - a_3)^2$ er ikke-negativ. Derfor udtrykker formlen ovenfor diskriminanten som en sum af strengt positive og en enkelt ikke-negativ størrelse. Derfor er diskriminanten strengt positiv, hvilket vil sige, at det karakteristiske polynomien har to forskellige, reelle rødder $\lambda_1$ og $\lambda_2$. Altså har $M$ disse to forskellige, reelle egenværdier.
+
+\subsection{Delopgave b}
+
+Vi ved, at et andengrads polynomien $f(x)$ med rødderne $x_1, x_2$ altid kan faktoriseres som
+\begin{align}
+f(x) = (x-x_1)(x-x_2)
+\end{align}
+Altså ved vi i vores tilfælde, at
+\begin{align}
+\det(M-\lambda E) = \lambda^2 + (a_1 + a_2 + a_3)\lambda + a_2a_3 = (\lambda - \lambda_1)(\lambda - \lambda_2)
+\end{align}
+hvilket er ækvivalent med
+\begin{align}
+\lambda^2 + (a_1 + a_2 + a_3)\lambda + a_2a_3 =  \lambda^2 + (-(\lambda_1 + \lambda_2))\lambda + \lambda_1\lambda_2
+\end{align}
+hvilket er ækvivalent med
+\begin{align}
+(a_1 + a_2 + a_3)\lambda + a_2a_3 =  (-(\lambda_1 + \lambda_2))\lambda + \lambda_1\lambda_2
+\end{align}
+
+Eftersom et førstegrads polynomien på formen 
+\begin{align}
+f(x) = ax + b
+\end{align}
+er unikt bestemt af koefficienterne $a$ og $b$, har vi altså nu, at
+\begin{align}
+a_1 + a_2 + a_3 = -(\lambda_1 + \lambda_2), \qquad a_2a_3 = \lambda_1\lambda_2
+\end{align}
+hvilket er ækvivalent med
+\begin{align}
+-(a_1 + a_2 + a_3) = \lambda_1 + \lambda_2, \qquad a_2a_3 = \lambda_1\lambda_2
+\end{align}
+
+Eftersom $a_1, a_2, a_3>0$, har vi altså
+\begin{align}
+\lambda_1 + \lambda_2 < 0, \qquad 0 < \lambda_1\lambda_2
+\end{align}
+
+Fra 
+\begin{align}
+\lambda_1 + \lambda_2 < 0
+\end{align}
+får vi, at mindst ét af $\lambda_1$ og $\lambda_2$ må være strengt negativ, da summen af to ikke-negative tal aldrig kan blive strengt negativt. 
+
+Fra
+\begin{align}
+0 < \lambda_1\lambda_2
+\end{align}
+får vi, at $\lambda_1$ og $\lambda_2$ har samme fortegn. 
+
+Altså har vi nu alt i alt, at både $\lambda_1$ og $\lambda_2$ er strengt negative.
+
+\subsection{Delopgave c}
+
+Jeg udregner $Mq_1$ koordinatvis
+\begin{align}
+(Mq_1)_1 = \\ 
+-(a_1 + a_2)(a_2 + \lambda_1) + a_1a_2 = \\
+\lambda_1(-a_1 - a_2 - \frac{a_2a_3}{\lambda_1})\\ \\
+(Mq_1)_2 = \\ 
+a_1(a_2 + \lambda_1) - a_1a_2 = \\
+\lambda_1a_1
+\end{align}
+Altså har vi, at 
+\begin{align}
+Mq_1 = \lambda_1 \begin{pmatrix}
+-a_1 - a_3 - \frac{a_2a_3}{\lambda_1}\\
+a_1
+\end{pmatrix}
+\end{align}
+Fra delopgave b har vi, at
+\begin{align}
+\lambda_1\lambda_2 = a_2a_3
+\end{align}
+hvilket er ækvivalent med
+\begin{align}
+\lambda_2 = \frac{a_2a_3}{\lambda_1}
+\end{align}
+
+Altså får vi, at
+\begin{align}
+- a_1 - a_3 - \frac{a_2a_3}{\lambda_1} = - a_1 - a_3 - \lambda_2
+\end{align}
+
+Fra delopgave b har vi yderligere, at
+\begin{align}
+\lambda_1 + \lambda_2 = -(a_1 + a_2 + a_3)
+\end{align}
+hvilket er ækvivalent med
+\begin{align}
+\lambda_1 + a_2 = - a_1 - a_3 - \lambda_2
+\end{align}
+
+Altså får vi nu alt i alt, at 
+\begin{align}
+- a_1 - a_3 - \frac{a_2a_3}{\lambda_1} = - a_1 - a_3 - \lambda_2 = a_2 + \lambda_1
+\end{align}
+hvilket giver os, at
+\begin{align}
+Mq_1 = \lambda_1 \begin{pmatrix}
+-a_1 - a_3 - \frac{a_2a_3}{\lambda_1}\\
+a_1
+\end{pmatrix} = \lambda_1 \begin{pmatrix}
+a_2 + \lambda_1\\
+a_1
+\end{pmatrix} = \lambda_1 q_1
+\end{align}
+Altså er $q_1$ en egenvektor for $M$ hørende til egenværdien $\lambda_1$.
+
+\subsection{Delopgave d}
+Eftersom $M$ er en $2\times 2$ matrix med to forskellige egenværdier, så er $M$ diagonaliserbar. Altså har vores system ifølge sætning 4 på side 125 i kursusbogen om differentialligning den fuldstændige løsning
+\begin{align}
+x(t) = \\ 
+c_1\exp(\lambda_1 t) q_1 + c_2\exp(\lambda_2t)q_2 = \\ 
+c_1\exp(\lambda_1 t)\begin{pmatrix}
+a_2 + \lambda_1\\
+a_1
+\end{pmatrix}  + c_2\exp(\lambda_2t)\begin{pmatrix}
+a_2 + \lambda_2\\
+a_1
+\end{pmatrix}
+\end{align}
+hvor $c_1, c_2 \in \mathbb{R}$.
+
+\subsection{Delopgave e}
+
+Vi har generelt, at
+\begin{align}
+x(0) = c_1\exp(\lambda_1 \cdot0) q_1 + c_2\exp(\lambda_2\cdot 0)q_2 =  c_1q_1 + c_2q_2 
+\end{align}
+I vores tilfælde har vi yderligere, at
+\begin{align}
+x(0) = \begin{pmatrix}
+K_{B0} \\ 0
+\end{pmatrix}
+\end{align}
+
+Vores begyndeĺsesbetingelse giver os altså følgende system til bestemmelse af $c_1$ og $c_2$:
+\begin{align}
+\begin{pmatrix}
+K_{B0} \\ 0
+\end{pmatrix} =
+c_1\begin{pmatrix}
+a_2 + \lambda_1\\
+a_1
+\end{pmatrix}  + c_2\begin{pmatrix}
+a_2 + \lambda_2\\
+a_1
+\end{pmatrix}
+\end{align}
+Vi kunne omskrive dette til et matrix problem og bruge rækkeoperationer på totalmatricen til at bestemme $c_1$ og $c_2$. Jeg synes dog, at dette system er tilpas simpelt til, at det er lettere at angribe direkte uden at gå gennem matrix repræsentationen. Vi har, at 
+\begin{align}
+0 = c_1a_1 + c_2a_1
+\end{align}
+hvilket er ækvivalent med, at 
+\begin{align}
+c_2 = -c_1
+\end{align}
+Vi har yderligere, at 
+\begin{align}
+K_{B0} = c_1(a_2 + \lambda_1) + c_2(a_2 + \lambda_2)
+\end{align}
+Indsætter vi $c_2 = -c_1$ heri, får vi
+\begin{align}
+K_{B0} = c_1(a_2 + \lambda_1) - c_1(a_2 + \lambda_2) = c_1(\lambda_1 - \lambda_2)
+\end{align}
+hvilket er ækvivalent med
+\begin{align}
+c_1 =  \frac{K_{B0}}{\lambda_1 - \lambda_2}
+\end{align}
+Da $c_2 = -c_1$, får vi yderligere, at 
+\begin{align}
+c_2 =  \frac{K_{B0}}{\lambda_2 - \lambda_1}
+\end{align}
+
+Altså har vi, at den partikulære løsning til begyndeĺsesbetingelsen er givet som
+\begin{align}
+x(t) = \exp(\lambda_1 t)\frac{K_{B0}}{\lambda_1 - \lambda_2}\begin{pmatrix}
+a_2 + \lambda_1\\
+a_1
+\end{pmatrix}  + \exp(\lambda_2t)\frac{K_{B0}}{\lambda_2 - \lambda_1}\begin{pmatrix}
+a_2 + \lambda_2\\
+a_1
+\end{pmatrix}
+\end{align}
+Altså har vi, at 
+\begin{align}
+K_B(t) = A_1\exp(\lambda_1 t) + A_2\exp(\lambda_2t)
+\end{align}
+hvor
+\begin{align}
+A_1 = \frac{K_{B0}(a_2 + \lambda_1)}{\lambda_1 - \lambda_2} \\ \\
+A_2 = \frac{K_{B0}(a_2 + \lambda_2)}{\lambda_2 - \lambda_1}
+\end{align}
+
+\subsection{Delopgave f}
+
+\subsection{Delopgave g}
+
+Fra delopgave e får vi disse to formler for $a_2$:
+\begin{align}
+a_2 = \frac{A_1(\lambda_1 - \lambda_2)}{K_{B0}} - \lambda_1 \\ \\
+a_2 = \frac{A_2(\lambda_2 - \lambda_1)}{K_{B0}} - \lambda_2
+\end{align}
+
+
+\end{document}

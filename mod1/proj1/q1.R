@@ -1,0 +1,55 @@
+setwd('~/Desktop/Matematik og modeller/mod1/proj1')
+
+library(tidyverse)
+library(xtable)
+
+sim_mod <- function(move, n, x1) {
+  
+  xs <- matrix(nrow = n, ncol = length(x1))
+  xs[1,] <- x1
+  for (t in 1:(n-1)) {
+    xs[t+1,] <- move(xs[t,])
+  }
+  
+  sim <- data_frame(t = 1:n, C=xs[,1], I=xs[,2])
+  plt <- sim %>% 
+    gather(key, value, C, I) %>% 
+    ggplot(aes(t, value, color=key)) + 
+    geom_line() + 
+    theme(legend.title = element_blank())
+  
+  list('sim' = sim, 'plt' = plt)
+  
+}
+
+make_matrix <- function(a,b,c) {
+  matrix(c(a, (a-1)*c, a, a*c), ncol = 2)
+}
+
+a <- 0.48
+b <- 1
+c <- 1.5
+A <- make_matrix(a,b,c)
+A
+
+move <- function(x) {
+  A%*%x + c(b, b*c)
+}
+
+n <- 50
+x1 <- c(1.8,0.4)
+sim <- sim_mod(move, n, x1)
+
+sim[['plt']]
+sim[['sim']][(n-5):n,]
+
+print(xtable(sim[['sim']][(n-5):n,], digits=6), file='q1tbl.tex')
+
+
+
+
+
+
+
+
+

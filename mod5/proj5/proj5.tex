@@ -1,0 +1,282 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper]{geometry} %page size
+\usepackage{parskip} %no paragraph indentation
+\usepackage{fancyhdr} %fancy stuff in page header
+\pagestyle{fancy} 
+
+\usepackage[utf8]{inputenc} %encoding
+\usepackage[danish]{babel} %danish letters
+
+\usepackage{graphicx} %import pictures
+\graphicspath{ {images/} }
+\usepackage{listings} %make lists
+
+\usepackage{amsmath, amssymb, amsfonts, amsthm, mathtools} %doing math
+\usepackage{algorithmicx, algpseudocode} %doing pseudocode
+
+\title{
+  Title\
+  \large Subtitle
+}
+\author{Asger Andersen}
+\date{\today}
+
+\fancyhead{}
+\lhead{This is the title}
+\rhead{Asger Andersen}
+
+%End of preamble
+%*******************************************************************************
+
+\begin{document}
+
+\section{Opgave 1: Kaniner og ræve}
+
+Vi har modellen
+\begin{align}
+\begin{pmatrix}
+K'(t) \\ 
+R'(t)
+\end{pmatrix} = f(K, R)
+\end{align}
+hvor 
+\begin{align}
+f(K,R) = \begin{pmatrix}
+r_K K (1 - \alpha K - bR) \\ 
+r_R R (cK - 1)
+\end{pmatrix}
+\end{align}
+hvor $\alpha>0$, $b=0.05$, $c=0.005$ og $r_K = r_R = 2$.
+
+\subsection{Delopgave a}
+
+Hvis vi antager $R(t)=0$ for alle $t$, så forsimples modellen til
+\begin{align}
+f(K,R) = \begin{pmatrix}
+r_K K (1 - \alpha K) \\ 
+0
+\end{pmatrix} = \begin{pmatrix}
+r_K K \left(1 - \frac{K}{B}\right) \\ 
+0
+\end{pmatrix} 
+\end{align}
+hvor $B=1/\alpha$. Altså får vi en model, hvor der ingen ræve er, og hvor antallet af kaniner vokser logistisk med vækstraten $r_k=2$ og befolkningskapaciteten $B=1/\alpha$.
+
+\subsection{Delopgave b}
+
+\begin{enumerate}
+\item Rævebestanden falder lige efter starttidspunktet.
+\item Da er rævebestanden stigende og kaninbestanden faldende.
+\item Der synes at være en ligevægt med omtrent 200 kaniner og omtrent 15 ræve.
+\item Ligevægten ser lokalt stabil ud, da det den snurrende bevægelse ind mod ligevægten tyder på, at der i hvert er et åbent område omkring ligevægten, hvorindenfor enhver kombination af de to befolkningsstørrelser med tiden trækkes mod ligevægten som mod centrummet af en malstrøm.
+\end{enumerate}
+
+\subsection{Delopgave c}
+
+\begin{enumerate}
+\item Jeg udregner \begin{align}
+f(K(0), R(0)) = \begin{pmatrix}
+2\cdot 100 \left(1 - \frac{100}{1000} - \frac{5\cdot 10}{100} \right) \\ \\
+2 \cdot 10 \left( \frac{5\cdot 100}{1000} - 1\right)
+\end{pmatrix} = 
+\begin{pmatrix}
+80 \\
+-10
+\end{pmatrix}
+\end{align}
+
+Altså er $R'(0)=-10$, hvilket vil sige, at rævebestanden er faldende til starttidspunktet 0.
+\item  Jeg udregner \begin{align}
+f(300, 20) = \begin{pmatrix}
+2\cdot 300 \left(1 - \frac{300}{1000} - \frac{5\cdot 20}{100} \right) \\ \\
+2 \cdot 20 \left( \frac{5\cdot 300}{1000} - 1\right)
+\end{pmatrix} = 
+\begin{pmatrix}
+-180 \\
+20
+\end{pmatrix}
+\end{align}
+Altså er kaninbestanden stigende og rævebestanden faldende, når der er 300 kaniner og 20 ræve.
+\end{enumerate}
+
+\subsection{Delopgave d \& e}
+
+Jeg ønsker at bestemme, om modellen har ligevægte $(K^*, R^*)$, hvor $K^*, R^*>0$. Derfor vil forsøge at løse systemet
+\begin{align}
+f(K^*, R^*) = (0,0), \qquad K^*, R^*>0
+\end{align}
+hvilket vi kan skrive ud som
+\begin{align}
+\begin{pmatrix}
+r_K K^* (1 - \alpha K^* - bR^*) \\ 
+r_R R^* (cK^* - 1)
+\end{pmatrix} =
+\begin{pmatrix}
+0 \\ 0
+\end{pmatrix}, \qquad K^*, R^*>0
+\end{align}
+Da $r_K, r_R, K^*, R^*>0$, får vi det ækvivalente system
+\begin{align}
+\begin{pmatrix}
+1 - \alpha K^* - bR^* \\ 
+cK^* - 1
+\end{pmatrix} =
+\begin{pmatrix}
+0 \\ 0
+\end{pmatrix}, \qquad K^*, R^*>0
+\end{align}
+Den nederste ligning giver os, at
+\begin{align}
+K^* = \frac{1}{c}, \qquad K^* >0
+\end{align}
+Indsætter vi det i den æverste ligning, får vi
+\begin{align}
+1 - \alpha \frac{1}{c} - bR^*, \qquad R^*>0
+\end{align}
+hvilket er ækvivalent med
+\begin{align}
+R^* = \frac{1}{b}\left( 1 - \frac{\alpha}{c} \right), \qquad R^*>0
+\end{align}
+Da $a,b,c>0$, kan denne ligning kun være sand, hvis $\alpha<c=0.005$. Antager vi dette, får vi, at modellen har netop én ligevægt $(K^*, R^*)$, hvor $K^*, R^*>0$, nemlig
+\begin{align}
+\begin{pmatrix}
+K^* \\ R^* 
+\end{pmatrix} = \begin{pmatrix}
+\frac{1}{c} \\ \\ 
+\frac{1}{b}\left( 1 - \frac{\alpha}{c} \right)
+\end{pmatrix} = \begin{pmatrix}
+200 \\ \\
+20\left( 1 - 200\alpha \right)
+\end{pmatrix}
+\end{align}
+
+Jeg udregner funktionalmatricen for $f$ som
+\begin{align}
+Df(R,K) = \begin{bmatrix}
+r_k(1 + bR -2\alpha K) & & -r_KbK \\ \\
+r_RcR & & r_R(cK - 1)
+\end{bmatrix}
+\end{align}
+Jeg evaluerer funktionalmatricen i ligevægten $(K^*, R^*)$:
+\begin{align}
+Df(R^*,K^*) =  \\ \\
+\begin{bmatrix}
+r_k\left(1 + b\left(\frac{1}{b}\left( 1 - \frac{\alpha}{c} \right) \right) -2\alpha\frac{1}{c} \right) & & -r_Kb\frac{1}{c} \\ \\
+r_Rc\left(\frac{1}{b}\left( 1 - \frac{\alpha}{c} \right) \right) & & r_R\left(c\frac{1}{c} - 1\right)
+\end{bmatrix} = \\ \\
+\begin{bmatrix}
+\frac{-r_Ka}{c} & & \frac{-r_Kb}{c} \\ \\
+\frac{r_R}{c}( c- a ) & & 0
+\end{bmatrix}
+\end{align}
+Jeg bestemmer det karakteristiske polynomien for funktionalmatricen evalueret i ligevægten:
+\begin{align}
+|Df(R^*,K^*) - \lambda E| = \\ 
+\left(\frac{-r_K\alpha}{c} - \lambda \right)(-\lambda) + \frac{r_Kr_R(c-\alpha)}{c} = \\
+\lambda^2 + \frac{r_K\alpha}{c}\lambda + \frac{r_Kr_R(c-\alpha)}{c}
+\end{align}
+Da vi har, at $r_K, r_R, \alpha, c>0$ og yderligere, at $\alpha<c$, er det karakteristiske altså på formen
+\begin{align}
+\lambda^2 + A\lambda + B, \qquad A,B >0
+\end{align}
+Rødderne i et sådant polynomien har negative realdele. Altså har funktionalmatricen evalueret i ligevægten kun egenværdier med negative realdele. Altså er ligevægten stabil per sætning 9 på side 150 i kursusbogen Differentialligninger.
+
+Altså har vi nu alt i alt vist, at hvis $\alpha<c$, så har vores model netop én ligevægt $(K^*, R^*)$, hvor $K^*, R^*>0$, nemlig
+\begin{align}
+\begin{pmatrix}
+K^* \\ R^* 
+\end{pmatrix} = \begin{pmatrix}
+200 \\ \\
+20\left( 1 - 200\alpha \right)
+\end{pmatrix}
+\end{align}
+og denne ligevægt er stabil. 
+
+Sætter vi $\alpha = 0.001$, får vi altså den stabile ligevægt
+\begin{align}
+\begin{pmatrix}
+K^* \\ R^* 
+\end{pmatrix} = \begin{pmatrix}
+200 \\ \\
+20\left( 1 - \frac{200}{1000} \right)
+\end{pmatrix} = \begin{pmatrix}
+200 \\ \\
+16
+\end{pmatrix}
+\end{align}
+hvilket svarer til det, som det numeriske plot også syntes at vise.
+
+\subsection{Delopgave f}
+
+Lad mig nu vise, at hvis et polynomien har formen
+\begin{align}
+p(\lambda) = \lambda^2 + A\lambda + B, \qquad A,B >0
+\end{align}
+så har alle dets rødder negative realdele. 
+
+Lad $\lambda = a + b i$ være en rod til $p$. Altså gælder
+\begin{align}
+\lambda^2 + A\lambda + B = 0, \qquad A,B >0
+\end{align}
+hvilket er ækvivalent med
+\begin{align}
+\lambda^2 + A\lambda = -B, \qquad A,B >0
+\end{align}
+hvilket, da $B>0$, medfører
+\begin{align}
+\lambda^2 + A\lambda < 0, \qquad A >0
+\end{align}
+Antag nu, at $b=0$, hvilket med andre ord vil sige, at $\lambda = a + b i$ er et reelt tal. Da har vi, at 
+\begin{align}
+a^2 + Aa < 0, \qquad A >0
+\end{align}
+Da $A, a^2>0$, har vi altså, at $a<0$, hvilket vil sige, at $\lambda$ har en negativ realdel.
+
+Antag nu i stedet, at $b\neq 0$. Da har vi, at 
+\begin{align}
+(a + bi)^2 + A(a + bi) < 0, \qquad A >0
+\end{align}
+hvilket per udregning er ækvivalent med
+\begin{align}
+(a^2 - b^2 + Aa) + (b(A + 2a))i\ <\ 0, \qquad A >0
+\end{align}
+Da $(a^2 - b^2 + Aa) + (b(A + 2a))i\ <\ 0$, følger det, at $(a^2 - b^2 + Aa) + (b(A + 2a))i \in \mathbb{R}$, da udsagnet $\gamma < 0$ slet ikke er defineret, hvis $\gamma$ ikke er et reelt tal. Altså følger det, at
+\begin{align}
+b(A + 2a) = 0, \qquad A >0
+\end{align}
+Da vi antaget, at $b\neq 0$, er dette ækvivalent med
+\begin{align}
+2a = -A, \qquad A >0
+\end{align}
+Da $A>0$, har vi altså nu, at $a<0$. Altså har $\lambda$ en negativ realdel.
+
+Jeg har nu alt i alt vist det ønskede.
+
+\section{Opgave 3: Ulve, får og græs}
+
+Vi har modellen
+\begin{align}
+\begin{pmatrix}
+G'(t) \\ 
+F'(t) \\
+U'(t)
+\end{pmatrix} = f(G, F, U)
+\end{align}
+hvor 
+\begin{align}
+f(G, F, U) = \begin{pmatrix}
+r_G G (1 - a G - bF) \\ 
+r_F F (cG - 1 - dU) \\
+r_U U (eF - 1)
+\end{pmatrix}
+\end{align}
+hvor $a, e>0$, $b=0.001$, $c=0.01$, $d=0.2$, $r_G = 2$, $r_F=0.1$ og $r_U=0.7$.
+
+\subsection{Delopgave a}
+
+Det fremgår af leddene $eF>0$ og $-dU<0$, at ulve spiser får. Hermed har vi nemlig, at ulvenes væksthastighed bør vokse med antallet af får, hvilket afspejles i leddet $eF>0$ i udtrykket for $U'(t)$. Ligeledes har vi, at fårenes væksthastighed bør falde med antallet af ulve, hvilket afspejles i leddet $-dU<0$ i udtrykket for $F'(t)$. 
+
+Det fremgår, at ulve ikke spiser græs ved, at antallet af ulve $U$ ikke indgår i udtrykket for græssets væksthastighed $G'(t)$, og tilsvarende at mængden af græs $G$ ikke indgår i udtrykket for ulvebestandens væksthastighed $U'(t)$. Hermed udtrykker modellen, at mængden af ulve og græs ikke  påvirker hinanden direkte, men kun indirekte gennem mængden af får. 
+
+\end{document}
