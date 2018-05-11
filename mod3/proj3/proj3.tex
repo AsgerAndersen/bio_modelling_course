@@ -383,11 +383,33 @@ x_{\min} = h(0) = \frac{r_0u_0 + \alpha}{r_0^2}
 
 \subsubsection{(iv)}
 
+Her er mine plots:
+\begin{center}
 \includegraphics[scale=0.5]{q3p1.png}
+\end{center}
+Hvert plot viser $x(t)$ for $x_0=0.95x_{\min}, 0.96x_{\min}, ..., x_{\min}, ..., 1.04x_{\min}, 1.05x_{\min}$. Plottene adskiller sig ved at vise funktionernes udvikling for højere og højere $t$. Vi ser, at hvor alle funktionerne ser ret linære ud og følges nogenlunde ad for $t=0,...,10$, så bliver de mere og mere eksponentielle og adskiller de sig mere og mere fra hinanden jo større $t$ bliver.
 
-\subsubsection{(v)}
+\subsubsection{(iv \& v)}
 
-\subsubsection{(vi)}
+Her er nogle plots af numeriske approksimationer af $x(t)$ ved hjælp af Eulers og Eulers forbedrede metode sammenlignet med den sande $x(t)$. I hvert plot er den blå linje den sande $x(t)$ og den røde linje er den numeriske approksimation:
+
+\begin{center}
+\includegraphics[scale=0.5]{q3p2.png}
+\end{center}
+
+I alle plottene er $h=1$, men vi ser på forskellige intervaller af $t$. Generelt ser vi, at Eulers forberede metode virkelig ser ud til at præstere meget bedre - faktisk i så høj grad, at grafen for den sande $x(t)$ ender med at ligge ovenpå grafen for den numeriske approksimation. Vi ser også, at de numeriske approksimationer underestimeterer den sande funktion, hvilket er forventeligt, da den sande funktion er konveks.
+
+Her er nogle plots af, hvor store fejl de numeriske approksimationer hver især begår (fejlen er udregnet som approksimerede værdi af $x(t)$ minus den sande værdi af $x(t)$):
+
+\begin{center}
+\includegraphics[scale=0.5]{q3p3.png}
+\end{center}
+
+Fejlene er negative, da approksimationerne som sagt underestimeterer den sande værdi. Vi ser, at for $t=10$ har Eulers normale metode en fejl på omkring $-5000$, mens den forbedrede metode har en fejl på omkring $-130$. Her er nogle plots, der viser, at hvis vi skal begrænse den absolutte værdi af fejlen for $t=10$ til $100$, så er det i hvert fald nok at sætte $h=0.01$ for den normale og $h=0.5$ for den forbedrede metode:
+\begin{center}
+\includegraphics[scale=0.5]{q3p4.png}
+\end{center}
+Ved hjælp af uniroot bestemmer jeg, at for $h=0.0188$, så er fejlen $-100$ for $t=10$ for den normale metode. Ligeledes bestemmer jeg, at for $h=0.847$, så er fejlen $-100$ for $t=10$ for den forberedrede metode. 
 
 \subsection{Delopgave b}
 
@@ -451,10 +473,17 @@ mod uendelig, hvis $j(0) \leq x(0)$, og $x(t)$ går mod minus uendelig, hvis $x(
 x_{\min} = j(0) = \frac{u_0 }{r_0 - \beta}
 \end{align}
 
-\subsubsection{(iiii)}
+\subsubsection{(iv)}
 
-\includegraphics[scale=0.7]{q3p2.png}
-\includegraphics[scale=0.7]{q3p3.png}
+Her er mine plots for delspørgsmål (A):
+\begin{center}
+\includegraphics[scale=0.5]{q3p5.png}
+\end{center}
+
+Her er mine plots for delspørgsmål (B):
+\begin{center}
+\includegraphics[scale=0.5]{q3p6.png}
+\end{center}
 
 \end{document}
 

@@ -1,10 +1,10 @@
-PWD /home/asger/Desktop/Matematik og modeller/mod3/proj3
+PWD /home/asger/Desktop/bio_modelling_course/mod3/proj3
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/proj3.tex
-OUTPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/proj3.log
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.tex
+OUTPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -88,9 +88,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/proj3.aux
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/proj3.aux
-OUTPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/proj3.aux
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.aux
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.aux
+OUTPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.aux
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
@@ -136,55 +136,64 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-OUTPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/proj3.pdf
+OUTPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.pdf
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p1.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p1.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p1.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p2.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p2.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p2.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p3.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p3.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p3.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p4.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p4.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p4.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p5.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p5.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p5.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p6.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p6.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p6.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p7.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p7.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p7.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p8.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p8.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p8.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p9.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p9.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p9.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p10.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p10.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p10.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p11.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p11.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p11.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p12.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p12.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p12.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p1.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p1.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p1.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p2.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p2.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p2.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p3.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p3.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p3.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p4.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p4.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p4.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p5.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p5.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p5.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p6.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p6.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p6.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p7.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p7.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p7.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p8.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p8.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p8.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p9.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p9.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p9.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p10.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p10.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p10.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p11.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p11.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p11.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p12.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p12.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p12.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q3p1.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q3p1.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q3p1.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q3p2.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q3p2.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q3p2.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q3p3.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q3p3.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/q3p3.png
-INPUT /home/asger/Desktop/Matematik og modeller/mod3/proj3/proj3.aux
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p1.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p1.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p1.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p2.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p2.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p2.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p3.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p3.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p3.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p4.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p4.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p4.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p5.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p5.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p5.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p6.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p6.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p6.png
+INPUT /home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb

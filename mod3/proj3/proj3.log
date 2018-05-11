@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.29)  11 MAY 2018 02:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.29)  11 MAY 2018 17:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **proj3.tex
-(/home/asger/Desktop/Matematik og modeller/mod3/proj3/proj3.tex
+(/home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 31 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -578,7 +578,7 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 Package: algpseudocode 
 
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) (/home/asger/Desktop/Matematik og modeller/mod3/proj3/proj3.aux)
+) (/home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.aux)
 \openout1 = `proj3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
@@ -735,12 +735,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4 </home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p1.png>]
-<q2p3.png, id=29, 271.0125pt x 334.24875pt>
+[4 </home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p1.png>]
+<q2p3.png, id=29, 548.80031pt x 347.79938pt>
 File: q2p3.png Graphic file (type png)
  <use q2p3.png>
 Package pdftex.def Info: q2p3.png used on input line 161.
-(pdftex.def)             Requested size: 216.81029pt x 267.39935pt.
+(pdftex.def)             Requested size: 439.04083pt x 278.23987pt.
+
+Overfull \hbox (50.16185pt too wide) in paragraph at lines 161--162
+ [] 
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -748,7 +752,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5 </home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p2.png (PNG copy)>]
+[5 </home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p2.png (PNG copy)>]
 <q2p4.png, id=33, 271.0125pt x 334.24875pt>
 File: q2p4.png Graphic file (type png)
  <use q2p4.png>
@@ -761,9 +765,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6 </home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p3.png (PNG copy)> <
-/home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p4.png (PNG copy)>]
-<q2p5.png, id=37, 548.80031pt x 347.79938pt>
+[6 </home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p3.png>]
+<q2p5.png, id=38, 548.80031pt x 347.79938pt>
 File: q2p5.png Graphic file (type png)
  <use q2p5.png>
 Package pdftex.def Info: q2p5.png used on input line 178.
@@ -775,11 +778,24 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7 </home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p5.png>]
-<q2p6.png, id=43, 548.80031pt x 347.79938pt>
+[7 </home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p4.png (PNG copy)>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8 </home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p5.png>]
+<q2p6.png, id=47, 548.80031pt x 347.79938pt>
 File: q2p6.png Graphic file (type png)
  <use q2p6.png>
 Package pdftex.def Info: q2p6.png used on input line 228.
+(pdftex.def)             Requested size: 274.39948pt x 173.89926pt.
+
+<q2p7.png, id=48, 548.80031pt x 347.79938pt>
+File: q2p7.png Graphic file (type png)
+ <use q2p7.png>
+Package pdftex.def Info: q2p7.png used on input line 232.
 (pdftex.def)             Requested size: 274.39948pt x 173.89926pt.
 
 
@@ -788,13 +804,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8] <q2p7.png, id=47, 548.80031pt x 347.79938pt>
-File: q2p7.png Graphic file (type png)
- <use q2p7.png>
-Package pdftex.def Info: q2p7.png used on input line 232.
-(pdftex.def)             Requested size: 274.39948pt x 173.89926pt.
-
-<q2p8.png, id=48, 548.80031pt x 347.79938pt>
+[9 </home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p6.png (PNG copy)>]
+<q2p8.png, id=52, 548.80031pt x 347.79938pt>
 File: q2p8.png Graphic file (type png)
  <use q2p8.png>
 Package pdftex.def Info: q2p8.png used on input line 242.
@@ -806,12 +817,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9 </home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p6.png (PNG copy)> <
-/home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p7.png (PNG copy)>]
-<q2p9.png, id=52, 548.80031pt x 347.79938pt>
+[10 </home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p7.png (PNG copy)> <
+/home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p8.png>]
+<q2p9.png, id=57, 548.80031pt x 347.79938pt>
 File: q2p9.png Graphic file (type png)
  <use q2p9.png>
 Package pdftex.def Info: q2p9.png used on input line 261.
+(pdftex.def)             Requested size: 274.39948pt x 173.89926pt.
+
+<q2p10.png, id=58, 548.80031pt x 347.79938pt>
+File: q2p10.png Graphic file (type png)
+ <use q2p10.png>
+Package pdftex.def Info: q2p10.png used on input line 265.
 (pdftex.def)             Requested size: 274.39948pt x 173.89926pt.
 
 
@@ -820,13 +837,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10 </home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p8.png>]
-<q2p10.png, id=57, 548.80031pt x 347.79938pt>
-File: q2p10.png Graphic file (type png)
- <use q2p10.png>
-Package pdftex.def Info: q2p10.png used on input line 265.
-(pdftex.def)             Requested size: 274.39948pt x 173.89926pt.
-
+[11 </home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p9.png (PNG copy)> <
+/home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p10.png (PNG copy)>]
 Overfull \hbox (26.46178pt too wide) in paragraph at lines 275--276
 []\OT1/cmr/m/n/12 Her er et plot af sum-men af de kva-dre-re-de resi-du-a-ler f
 or $\OML/cmm/m/it/12 r \OT1/cmr/m/n/12 = 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 38\
@@ -835,21 +847,13 @@ OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 39\OML/cmm
 /it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 48$
  []
 
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[11 </home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p9.png (PNG copy)> 
-</home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p10.png (PNG copy)>]
-<q2p11.png, id=61, 548.80031pt x 347.79938pt>
+<q2p11.png, id=62, 548.80031pt x 347.79938pt>
 File: q2p11.png Graphic file (type png)
  <use q2p11.png>
 Package pdftex.def Info: q2p11.png used on input line 277.
 (pdftex.def)             Requested size: 274.39948pt x 173.89926pt.
 
-<q2p12.png, id=62, 271.0125pt x 334.24875pt>
+<q2p12.png, id=63, 271.0125pt x 334.24875pt>
 File: q2p12.png Graphic file (type png)
  <use q2p12.png>
 Package pdftex.def Info: q2p12.png used on input line 287.
@@ -861,25 +865,37 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12 </home/asger/Desktop/Matematik og modeller/mod3/proj3/q2p11.png> </home/asg
-er/Desktop/Matematik og modeller/mod3/proj3/q2p12.png (PNG copy)>]
+[12 </home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p11.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[13]
+[13 </home/asger/Desktop/bio_modelling_course/mod3/proj3/q2p12.png (PNG copy)>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[14] <q3p1.png, id=74, 548.80031pt x 347.79938pt>
+[14]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15] <q3p1.png, id=78, 548.80031pt x 347.79938pt>
 File: q3p1.png Graphic file (type png)
  <use q3p1.png>
-Package pdftex.def Info: q3p1.png used on input line 386.
+Package pdftex.def Info: q3p1.png used on input line 388.
+(pdftex.def)             Requested size: 274.39948pt x 173.89926pt.
+
+<q3p2.png, id=79, 548.80031pt x 347.79938pt>
+File: q3p2.png Graphic file (type png)
+ <use q3p2.png>
+Package pdftex.def Info: q3p2.png used on input line 397.
 (pdftex.def)             Requested size: 274.39948pt x 173.89926pt.
 
 
@@ -888,25 +904,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[16 </home/asger/Desktop/Matematik og modeller/mod3/proj3/q3p1.png (PNG copy)>]
-<q3p2.png, id=81, 271.0125pt x 334.24875pt>
-File: q3p2.png Graphic file (type png)
- <use q3p2.png>
-Package pdftex.def Info: q3p2.png used on input line 456.
-(pdftex.def)             Requested size: 189.70744pt x 233.97252pt.
-
-<q3p3.png, id=82, 271.0125pt x 334.24875pt>
+[16 </home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p1.png (PNG copy)> <
+/home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p2.png (PNG copy)>]
+<q3p3.png, id=83, 548.80031pt x 347.79938pt>
 File: q3p3.png Graphic file (type png)
  <use q3p3.png>
-Package pdftex.def Info: q3p3.png used on input line 457.
-(pdftex.def)             Requested size: 189.70744pt x 233.97252pt.
+Package pdftex.def Info: q3p3.png used on input line 405.
+(pdftex.def)             Requested size: 274.39948pt x 173.89926pt.
+
+<q3p4.png, id=84, 548.80031pt x 347.79938pt>
+File: q3p4.png Graphic file (type png)
+ <use q3p4.png>
+Package pdftex.def Info: q3p4.png used on input line 410.
+(pdftex.def)             Requested size: 274.39948pt x 173.89926pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -914,40 +924,65 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[17]
+[17 </home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p3.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[18 </home/asger/Desktop/Matematik og modeller/mod3/proj3/q3p2.png (PNG copy)> 
-</home/asger/Desktop/Matematik og modeller/mod3/proj3/q3p3.png (PNG copy)>]
-(/home/asger/Desktop/Matematik og modeller/mod3/proj3/proj3.aux) ) 
+[18 </home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p4.png>]
+<q3p5.png, id=93, 548.80031pt x 347.79938pt>
+File: q3p5.png Graphic file (type png)
+ <use q3p5.png>
+Package pdftex.def Info: q3p5.png used on input line 480.
+(pdftex.def)             Requested size: 274.39948pt x 173.89926pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[19] <q3p6.png, id=98, 548.80031pt x 347.79938pt>
+File: q3p6.png Graphic file (type png)
+ <use q3p6.png>
+Package pdftex.def Info: q3p6.png used on input line 485.
+(pdftex.def)             Requested size: 274.39948pt x 173.89926pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20 </home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p5.png (PNG copy)> <
+/home/asger/Desktop/bio_modelling_course/mod3/proj3/q3p6.png (PNG copy)>]
+(/home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.aux) ) 
 Here is how much of TeX's memory you used:
- 6238 strings out of 494333
- 85320 string characters out of 6163939
+ 6253 strings out of 494333
+ 85486 string characters out of 6163939
  166145 words of memory out of 5000000
- 9445 multiletter control sequences out of 15000+600000
+ 9457 multiletter control sequences out of 15000+600000
  9803 words of font info for 37 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
- 38i,12n,43p,719b,335s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "/home/asger/Desktop/Matematik og modeller/mod3/proj3/proj3.p
-df" (18 pages, 587362 bytes).
+ 38i,12n,43p,713b,335s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on /home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.pdf
+ (20 pages, 764844 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
+ 138 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 
