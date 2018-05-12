@@ -1,16 +1,20 @@
 library(tidyverse)
-euler <- function(diff,x0,y0,n,h) {
-  xs <- seq(x0, by = h, length.out = (n+1))
-  ys <- rep(NA, (n+1))
+euler <- function(diff, 
+                  x0, y0, x_end, 
+                  h, improv = F) {
+  xs <- seq(x0, x_end + x_end%%h, by = h)
+  ys <- rep(NA, length(xs))
   ys[1] <- y0
-  for (i in 2:(n+1)) {
-    ys[i] <- ys[i-1] + diff(xs[i-1], ys[i-1])*h
+  for (i in 2:length(xs)) {
+    ystar <- ys[i-1] + diff(xs[i-1], ys[i-1])*h
+    if (improv) {
+      ys[i] <- ys[i-1] + (diff(xs[i-1], ys[i-1]) + diff(xs[i], ystar))*h/2
+    }
+    else {
+      ys[i] <- ystar
+    }
   }
-  data_frame(x=xs, y=ys)
+  data_frame(t=xs, x_euler=ys)
 }
 
-euler(function(x,y) y, 
-      0, 0.01, 20, 0.05) %>% 
-  ggplot(aes(x,y)) +
-  geom_line()
 
