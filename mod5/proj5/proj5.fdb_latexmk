@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1525967425 "proj5.tex" "/home/asger/Desktop/Matematik og modeller/mod5/proj5/proj5.pdf" "proj5" 1525967426
+["pdflatex"] 1526241658 "proj5.tex" "/home/asger/Desktop/bio_modelling_course/mod5/proj5/proj5.pdf" "proj5" 1526241658
   "/etc/texmf/web2c/texmf.cnf" 1475345792 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/asger/Desktop/Matematik og modeller/mod5/proj5/proj5.aux" 1525967426 861 612061ecaff910c460ab76beb03a03b0 ""
+  "/home/asger/Desktop/bio_modelling_course/mod5/proj5/proj5.aux" 1526241658 1175 89528b7eb7f1632c0b9c5df3e27045fb ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -88,11 +88,17 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1503343927 31343 93828589fb0cea665e553ee5a17ad2d4 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1504005403 130851 2e4225e12ee6925e04370c332028384d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1504005400 2466622 9bbefcd79911213e781b180e6c2d9399 ""
-  "proj5.aux" 1525967426 861 612061ecaff910c460ab76beb03a03b0 ""
-  "proj5.tex" 1525967424 8868 b552f2ade014183d404c7a2a13345963 ""
+  "eq_t1.tex" 1526237711 371 c8743def10e400ede9e481c781e2e19f ""
+  "eq_t2.tex" 1526237759 374 15fbc3fefda8756396bbac259c3434da ""
+  "eq_t3.tex" 1526237770 373 9a3a4686df675746e3cea6ee00fbfbce ""
+  "proj5.aux" 1526241658 1175 89528b7eb7f1632c0b9c5df3e27045fb ""
+  "proj5.tex" 1526241657 17797 c472b4ec7a7c2237270375dd39af72ce ""
+  "q2p1.png" 1526223140 21931 d2f5b300a694751796e2813dcde533e8 ""
   (generated)
-  "proj5.log"
-  "proj5.pdf"
+  "/home/asger/Desktop/bio_modelling_course/mod5/proj5/proj5.log"
   "/home/asger/Desktop/Matematik og modeller/mod5/proj5/proj5.log"
-  "proj5.aux"
+  "proj5.log"
   "/home/asger/Desktop/Matematik og modeller/mod5/proj5/proj5.pdf"
+  "/home/asger/Desktop/bio_modelling_course/mod5/proj5/proj5.pdf"
+  "proj5.pdf"
+  "proj5.aux"

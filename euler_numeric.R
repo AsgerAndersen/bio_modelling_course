@@ -1,20 +1,43 @@
 library(tidyverse)
-euler <- function(diff, 
-                  x0, y0, x_end, 
-                  h, improv = F) {
-  xs <- seq(x0, x_end + x_end%%h, by = h)
-  ys <- rep(NA, length(xs))
-  ys[1] <- y0
-  for (i in 2:length(xs)) {
-    ystar <- ys[i-1] + diff(xs[i-1], ys[i-1])*h
+
+#Put onedim into euler_auton, 
+#which should now then output time,
+#also if time has no effect on the 
+#dynamics
+euler_onedim <- function(diff, 
+                         t0, x0, t_end, 
+                         h, improv = T) {
+  ts <- seq(t0, t_end + t_end%%h, by = h)
+  xs <- rep(NA, length(ts))
+  xs[1] <- x0
+  for (i in 2:length(ts)) {
+    xstar <- xs[i-1] + diff(ts[i-1], xs[i-1])*h
     if (improv) {
-      ys[i] <- ys[i-1] + (diff(xs[i-1], ys[i-1]) + diff(xs[i], ystar))*h/2
+      xs[i] <- xs[i-1] + (diff(ts[i-1], xs[i-1]) + diff(ts[i], xstar))*h/2
     }
     else {
-      ys[i] <- ystar
+      xs[i] <- xstar
     }
   }
-  data_frame(t=xs, x_euler=ys)
+  data_frame(t=ts, x_euler=xs)
 }
 
-
+euler_auton <- function(diff, x0,
+                        n, h, improv = T,
+                        names) {
+  xs <- matrix(nrow = n, ncol = length(x0))
+  xs[1,] <- x0
+  for (i in 2:n) {
+    xstar <- xs[i-1,] + diff(xs[i-1,])*h
+    if (improv) {
+      xs[i,] <- xs[i-1,] + (diff(xs[i-1,]) + diff(xstar))*h/2
+    }
+    else {   
+      xs[i,] <- xstar
+    }
+  }
+  colnames(xs) <- names
+  data.frame(xs)
+  #xs$t <- seq(0, by = h, length.out = n)
+  xs
+}

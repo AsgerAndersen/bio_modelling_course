@@ -253,30 +253,261 @@ Da $A>0$, har vi altså nu, at $a<0$. Altså har $\lambda$ en negativ realdel.
 
 Jeg har nu alt i alt vist det ønskede.
 
-\section{Opgave 3: Ulve, får og græs}
-
-Vi har modellen
-\begin{align}
-\begin{pmatrix}
-G'(t) \\ 
-F'(t) \\
-U'(t)
-\end{pmatrix} = f(G, F, U)
-\end{align}
-hvor 
-\begin{align}
-f(G, F, U) = \begin{pmatrix}
-r_G G (1 - a G - bF) \\ 
-r_F F (cG - 1 - dU) \\
-r_U U (eF - 1)
-\end{pmatrix}
-\end{align}
-hvor $a, e>0$, $b=0.001$, $c=0.01$, $d=0.2$, $r_G = 2$, $r_F=0.1$ og $r_U=0.7$.
+\section{Opgave 2: }
 
 \subsection{Delopgave a}
 
-Det fremgår af leddene $eF>0$ og $-dU<0$, at ulve spiser får. Hermed har vi nemlig, at ulvenes væksthastighed bør vokse med antallet af får, hvilket afspejles i leddet $eF>0$ i udtrykket for $U'(t)$. Ligeledes har vi, at fårenes væksthastighed bør falde med antallet af ulve, hvilket afspejles i leddet $-dU<0$ i udtrykket for $F'(t)$. 
+Vi har systemet 
+\begin{align}
+\begin{pmatrix}
+V' \\ BC' 
+\end{pmatrix} = f(V, BC)
+\end{align}
+hvor $f$ er defineret i opgavebeskrivelsen. Da opgavebeskrivelsen beder om at finde systemets ligevægt i ental, fortolker jeg det sådan, at det er givet, at der eksisterer netop ét punkt $(V^*,BC^*)\in \mathbb{R}$, så $V^*, BC^*>0$ (da ligevægten ellers er meningsløs fra et biologisk synspunkt) og så $f(V^*, BC^*) = (0,0)$. Altså er $(V^*, BC^*)$ det eneste strengt positive punkt i $\mathbb{R}^2$, så
+\begin{align}
+g(V^*, BC^*) = ||f(V^*, BC^*)|| = 0
+\end{align}
+Da normen af en vektor altid er større eller lig 0, så er $(V^*, BC^*)$ altså et globalt minimum for $g$ begrænset til domænet af strengt positive punkter i $\mathbb{R}^2$. Til forskel fra $f$ har $g$ et 1-dimensionelt output, og derfor kan $g$ minimeres ved hjælp af funktionen $nlm$ i R. Hermed finder jeg, at $(V^*, BC^*) = (0.43, 1.54)$.
+
+Hvis vi betegner funktionalmatricen for $f$ med $Df$, kan vi let udregne, at 
+\begin{align}
+Df = \begin{bmatrix}
+-(f_V + l_A) && 0 \\ \\
+Df_{21} && Df_{22}
+\end{bmatrix}
+\end{align}
+Altså er den transponerede funktionalmatrice en trekantsmatrice. En trekantsmatrice har sin diagonal som egenværdier. Da egenværdierne for en transponeret matrix er de samme som egenværdierne for matricen selv, får vi nu, at funktionalmatricen evalueret i ligevægten har egenværdierne
+\begin{align}
+\lambda_1 = -(f_V + l_A) = -0.3\\
+\lambda_2 = Df_{21} = -\frac{f_C}{2}\left(\frac{BC^*}{V^*}\right)^2 \exp\left( \frac{BC^*}{V^*}\right) = -0.0037
+\end{align}
+Da begge egenværdier er skarpt negative, er ligevægten stabil.
+
+\subsection{Delopgave b}
+
+Her er to plots over den numeriske løsning med Eulers forbedrede metode ud fra de to forskellige startbetingelser:
+
+\begin{center}
+\includegraphics[scale=0.5]{q2p1.png}
+\end{center}
+
+Den grønne prik er ligevægten $(V^*, BC^*) = (0.43, 1.54)$. Jeg har simuleret udviklingen for $t=0,1,...,1500$.
+
+\section{Opgave 3: Ulve, får og græs}
+
+Vi har modellen 
+\begin{align}
+\begin{pmatrix}
+G' \\ F' \\ U'
+\end{pmatrix} = f(G, F, U)
+\end{align}
+hvor
+\begin{align}
+f(G, F, U) = \begin{pmatrix}
+aG(1 - \alpha G - bF) \\
+cF(dG - 1 - eU) \\
+fU(\beta F - 1)
+\end{pmatrix}
+\end{align}
+hvor $\alpha, \beta > 0$ og $a=2, b=0.001, c=0.1, d=0.01, e=0.2$ og $f=0.7$.
+
+\subsection{Delopgave a}
+
+Det fremgår af leddene $\beta F>0$ og $-eU<0$, at ulve spiser får. Hermed har vi nemlig, at ulvenes væksthastighed bør vokse med antallet af får, hvilket afspejles i leddet $\beta F>0$ i udtrykket for $U'(t)$. Ligeledes har vi, at fårenes væksthastighed bør falde med antallet af ulve, hvilket afspejles i leddet $-eU<0$ i udtrykket for $F'(t)$. 
 
 Det fremgår, at ulve ikke spiser græs ved, at antallet af ulve $U$ ikke indgår i udtrykket for græssets væksthastighed $G'(t)$, og tilsvarende at mængden af græs $G$ ikke indgår i udtrykket for ulvebestandens væksthastighed $U'(t)$. Hermed udtrykker modellen, at mængden af ulve og græs ikke  påvirker hinanden direkte, men kun indirekte gennem mængden af får. 
+
+\subsection{Delopgave b, c \& d}
+
+For at bestemme modellens ligevægte skal vi løse systemet
+\begin{align}
+f(G^*, F^*, U^*) = \begin{pmatrix}
+0 \\ 0 \\ 0
+\end{pmatrix}
+\end{align}
+
+Fra 
+\begin{align}
+fU^*(\beta F^* - 1) = 0
+\end{align}
+får vi, at 
+\begin{align}
+U^* = 0
+\end{align}
+eller
+\begin{align}
+F^* = \frac{1}{\beta}
+\end{align}
+
+Antag først, at $U^*=0$. Indsætter vi dette resultat i 
+\begin{align}
+cF^*(dG^* - 1 - eU^*) = 0
+\end{align}
+får vi
+\begin{align}
+cF^*(dG^* - 1) = 0
+\end{align}
+hvilket giver, at 
+\begin{align}
+F^* = 0
+\end{align}
+eller 
+\begin{align}
+G^* = \frac{1}{d}
+\end{align}
+
+Antag først, at $F^*=0$. Indsætter vi dette resultat i 
+\begin{align}
+aG^*(1 - \alpha G^* - bF^*) = 0
+\end{align}
+får vi
+\begin{align}
+aG^*(1 - \alpha G^*) = 0
+\end{align}
+hvilket giver, at 
+\begin{align}
+G^* = 0
+\end{align}
+eller
+\begin{align}
+G^* = \frac{1}{\alpha}
+\end{align}
+
+Alt i alt har vi nu fundet ud, at systemet har de to ligevægte
+\begin{align}
+L_1 = \begin{pmatrix}
+G_1^* \\ F^*_1 \\ U_1^*
+\end{pmatrix} = \begin{pmatrix}
+0 \\ 0 \\ 0
+\end{pmatrix}, \qquad 
+L_2 = \begin{pmatrix}
+G_2^* \\ F^*_2 \\ U_2^*
+\end{pmatrix} = \begin{pmatrix}
+\frac{1}{\alpha} \\ 0 \\ 0
+\end{pmatrix}
+\end{align}
+
+Antag nu fortsat, at $U^*=0$, men at $F^* \neq 0$. Da får vi fra vores resultater ovenfor, at
+\begin{align}
+G^* = \frac{1}{d}
+\end{align}
+Indsætter vi dette i
+\begin{align}
+aG^*(1 - \alpha G^* - bF^*) = 0
+\end{align}
+får vi
+\begin{align}
+\frac{a}{d}(1 - \frac{\alpha}{d} - bF^*) = 0
+\end{align}
+hvilket er ækvivalent med
+\begin{align}
+F^* = \frac{d-\alpha}{db}
+\end{align}
+Hermed har også fundet ligevægten
+\begin{align}
+L_3 = \begin{pmatrix}
+G_3^* \\ F^*_3 \\ U_3^*
+\end{pmatrix} = \begin{pmatrix}
+\frac{1}{d} \\ \frac{d-\alpha}{db} \\ 0
+\end{pmatrix}
+\end{align}
+
+Antag nu, at $U^*\neq 0$. Da får vi fra vores resultater ovenfor, at
+\begin{align}
+F^* = \frac{1}{\beta}
+\end{align}
+Indsætter vi dette i 
+\begin{align}
+aG^*(1 - \alpha G^* - bF^*) = 0
+\end{align}
+får vi 
+\begin{align}
+aG^*\left(1 - \alpha G^* - \frac{b}{\beta}\right) = 0
+\end{align}
+hvilket er ækvivalent med 
+\begin{align}
+-a\alpha (G^*)^2 + a \left( 1 - \frac{b}{\beta} \right) G^* = 0
+\end{align}
+Dette er en andengrads ligning med diskrimanten
+\begin{align}
+\text{dis} = \left(a \left( 1 - \frac{b}{\beta} \right) \right)^2 + 4a\alpha
+\end{align}
+Da $a, \alpha > 0$, har vi altså, at $d>0$, hvilket vil sige, at der er to ligevægte for $G$, nemlig
+\begin{align}
+G_4^* = \frac{a \left( 1 - \frac{b}{\beta} \right)  + \sqrt{\text{dis}}}{2a\alpha} 
+\end{align}
+og
+\begin{align}
+G_5^* = \frac{a \left( 1 - \frac{b}{\beta} \right) - \sqrt{\text{dis}}}{2a\alpha} 
+\end{align}
+
+Hvis vi indsætter dette i 
+\begin{align}
+cF^*(dG^* - 1 - eU^*) = 0
+\end{align}
+får vi nu også to ligevægte for $U^*$, nemlig
+\begin{align}
+U_4^* = \frac{dG_4^* - 1}{e} = 
+\frac{d a \left( 1 - \frac{b}{\beta} \right)  + \sqrt{\text{dis}} - 2a\alpha}{2a\alpha e}
+\end{align}
+og 
+\begin{align}
+U_5^* = \frac{dG_5^* - 1}{e} = 
+\frac{d a \left( 1 - \frac{b}{\beta} \right)  - \sqrt{\text{dis}} - 2a\alpha}{2a\alpha e}
+\end{align}
+
+Hermed har vi også fundet ligevægtene
+\begin{align}
+L_4 = \begin{pmatrix}
+G_4^* \\ F^*_4 \\ U_4^*
+\end{pmatrix} = \begin{pmatrix}
+\frac{a \left( 1 - \frac{b}{\beta} \right)  + \sqrt{\text{dis}}}{2a\alpha}  \\ \\
+\frac{1}{\beta} \\ \\
+\frac{d a \left( 1 - \frac{b}{\beta} \right)  + \sqrt{\text{dis}} - 2a\alpha}{2a\alpha e}
+\end{pmatrix}
+\\
+\\ 
+L_5 = \begin{pmatrix}
+G_5^* \\ F^*_5 \\ U_5^*
+\end{pmatrix} = \begin{pmatrix}
+\frac{a \left( 1 - \frac{b}{\beta} \right)  - \sqrt{\text{dis}}}{2a\alpha}  \\ \\
+\frac{1}{\beta} \\ \\
+\frac{d a \left( 1 - \frac{b}{\beta} \right)  - \sqrt{\text{dis}} - 2a\alpha}{2a\alpha e} 
+\end{pmatrix}
+\end{align}
+
+Det var de generelle resultater. Lad os nu specialisere ved først at indsætte de fast givne  konstanter, samt sætte $\alpha=0.002$ og $\beta=0.005$. Hermed får vi disse ligevægte:
+\begin{center}
+\input{eq_t1.tex}
+\end{center}
+Vi ser, at der er netop én strengt positiv ligevægt, nemlig $L_4$. Der er altså netop én ligevægt, hvor alle 3 arter overlever. I den ligevægt har vi 400 græs (hvad end det vil sige), 200 får og 15 ulve. Dog ved vi ikke noget om, hvilke startbetingelser, der fører til denne ligevægt frem for nogle af de andre.
+
+Hvis vi sætter $\alpha=0.002$ og $\beta=0.0008$, får vi disse ligevægte
+\begin{center}
+\input{eq_t2.tex}
+\end{center}
+Vi ser, at vi ikke længere har nogen strengt positiv ligevægt. Der er altså ikke nogle startbetingelser, der fører til en langsigtet udvikling, hvor alle 3 arter overlever. I denne verden vil ulvene altid uddø på sigt. Der findes dog en ligevægt, hvor både græsset og fårene overlever, nemlig $L_3$, hvor der er 100 græs og 800 får.
+
+I forhold til før er det, der er ændret, at $\beta$ er blevet lavere, og det har altså gjort, at ulvene altid vil uddø på sigt. Ser vi på modellen, udtrykker $\beta$ netop i hvor høj grad flere får øger ulvenes væksthastighed. Sætter vi $\beta$ ned, formindskes ulvenes væksthastighed per får, og det giver umiddelbart mening, at dette forværre ulvenes mulighed for at overleve på lang sigt.
+
+Hvis vi sætter $\alpha=0.02$ og $\beta=0.0008$, får vi disse ligevægte
+\begin{center}
+\input{eq_t3.tex}
+\end{center}
+Vi ser, at vi ikke længere har nogen strengt positiv ligevægt og heller ikke nogen ligevægt, hvor fårene overlever på lang sigt. I denne verden er græsset den eneste art, der har mulighed for at forblive i live i al fremtid. Interessant nok er forskellen på denne situation og situationen før, at vi har sat $\alpha$ op. Ser vi på modellen, udtrykker $\alpha$ i hvor høj grad græsset hæmmer sin egen vækst. At græsset hæmmer sin vækst mere får altså tilsyneladende fårene til at uddø på lang sigt, hvorefter græsset er den eneste art, der er tilbage. Dette har at gøre med, at fårene jo lever af græs, og derfor vil forskellen mellem $d$ (hvor meget græsset øger fårenes vækst) og $\alpha$ (hvor meget græsset hæmmer sin egen vækst) afgøre, om fårene kan overleve på lang sigt. Hvis græsset hæmmer sin vækst mere end det fremmer fårenes vækst (hvis $\alpha>d$), så vil fårene ifølge vores model uddø på lang sigt.
+
+Nu mangler jeg bare at afgøre, om den strengt positive ligevægt i tilfældet $\alpha=0.002$ og $\beta=0.005$ er stabil eller ej. Her er funktionalmatricen for $f$
+\begin{align}
+Df = \begin{bmatrix}
+a(1-2\alpha G - b F) && -abG && 0 \\ \\
+cdF && c(dG-1-eU) && -ceF \\ \\ 
+0 && f\beta U && f(\beta F - 1)
+\end{bmatrix}
+\end{align}
+Jeg bruger R til at evaluere denne matrice i ligevægten $L_4$ for $\alpha=0.002$ og $\beta=0.005$, hvorefter jeg finder dens egenværdier. Hermed får jeg
+\begin{align}
+\lambda_1 = -1.51, \quad \lambda_2 = -0.05 + 0.47i, \quad \lambda_3 = -0.05 - 0.47i
+\end{align}
+Da alle disse tre egenværdier har negative realdele, er ligevægten stabil.
 
 \end{document}
