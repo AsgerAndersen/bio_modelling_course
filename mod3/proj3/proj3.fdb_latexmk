@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1526053233 "proj3.tex" "/home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.pdf" "proj3" 1526053234
+["pdflatex"] 1526250492 "proj3.tex" "/home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.pdf" "proj3" 1526250492
   "/etc/texmf/web2c/texmf.cnf" 1475345792 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.aux" 1526053234 2026 054601d77df62ec9503a6725c174d7ec ""
+  "/home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.aux" 1526250492 1952 3c46867d240bc2ea7f1d5118f6baf208 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -89,8 +89,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1503343927 31343 93828589fb0cea665e553ee5a17ad2d4 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1504005403 130851 2e4225e12ee6925e04370c332028384d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1504005400 2466622 9bbefcd79911213e781b180e6c2d9399 ""
-  "proj3.aux" 1526053234 2026 054601d77df62ec9503a6725c174d7ec ""
-  "proj3.tex" 1526053232 20012 303b184c3b4e131b0773fb3b27072e5d ""
+  "proj3.aux" 1526250492 1952 3c46867d240bc2ea7f1d5118f6baf208 ""
+  "proj3.tex" 1526250489 20013 3c71afbddeb0d0baf8870b51b8780afa ""
   "q2p1.png" 1525987980 6022 c3965a0c88c95a2230f0e5159610436f ""
   "q2p10.png" 1525997668 36097 9873f86242f154fccbe28174ba958b48 ""
   "q2p11.png" 1525997683 5426 7246f1585aad298641ee5cdc9fe3331c ""
@@ -110,10 +110,10 @@
   "q3p5.png" 1526053154 113223 98e6bae6259b0cae3b2f410ea2c4b64e ""
   "q3p6.png" 1526053224 88967 3e593801a452f3fc695ca0b3756a0f6f ""
   (generated)
-  "/home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.pdf"
-  "proj3.aux"
-  "proj3.log"
   "proj3.pdf"
-  "/home/asger/Desktop/Matematik og modeller/mod3/proj3/proj3.pdf"
-  "/home/asger/Desktop/Matematik og modeller/mod3/proj3/proj3.log"
   "/home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.log"
+  "/home/asger/Desktop/Matematik og modeller/mod3/proj3/proj3.pdf"
+  "/home/asger/Desktop/bio_modelling_course/mod3/proj3/proj3.pdf"
+  "proj3.log"
+  "proj3.aux"
+  "/home/asger/Desktop/Matematik og modeller/mod3/proj3/proj3.log"

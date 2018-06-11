@@ -1,0 +1,140 @@
+```{r setup}
+knitr::opts_knit$set(root.dir = '~/Desktop/bio_modelling_course/mod4/proj4')
+```
+
+# R code for question 1
+
+```{r}
+library(magrittr)
+library(tidyverse)
+
+data <- read_delim('anaestesi-data.txt',' ')
+
+#f
+fit <- nls(Koncentration~A1*exp(l1*Tid)+A2*exp(l2*Tid), 
+           data=data,
+           start=list(A1=1, A2=1, l1=-1, l2=-2))
+pars <- fit$m$getPars()
+Kb <- function(t) {
+  unname(pars['A1']*exp(pars['l1']*t) + pars['A2']*exp(pars['l2']*t))
+}
+ggplot(data, aes(Tid, Koncentration)) +
+  geom_point() +
+  stat_function(fun=Kb, color='blue')
+
+#g
+Kb0 <- 0.846
+a2_1 <- pars['A1']*(pars['l1']-pars['l2'])/Kb0 - pars['l1']
+a2_2 <- pars['A1']*(pars['l2']-pars['l1'])/Kb0 - pars['l2']
+a2 <- mean(c(a2_1,a2_2))
+a2
+a3 <- unname(pars['l1']*pars['l2']/a2)
+a3
+a1 <- unname(-pars['l1']-pars['l2']-a2-a3)
+a1
+
+#h
+c1 <- unname(Kb0/(pars['l1']-pars['l2']))
+c2 <- unname(Kb0/(pars['l2']-pars['l1']))
+q1 <- unname(c(a2 + pars['l1'], a1))
+q2 <- unname(c(a2 + pars['l2'], a1))
+model <- function(t) unname(exp(pars['l1']*t)*c1*q1 + exp(pars['l2']*t)*c2*q2)
+ts <- seq(0,5,0.01)
+sim <- data.frame(t(as.matrix(data.frame(map(ts, model)))))
+rownames(sim) <- NULL
+colnames(sim) <- c('Blod', 'Væv')
+sim %<>% mutate(t = ts) 
+sim %>% 
+  gather(key='key', value='value', -t) %>% 
+  ggplot(aes(t, value, color=key)) +
+  geom_line() +
+  geom_hline(yintercept = 0.25, color='green', linetype='dashed') +
+  theme(legend.title = element_blank())
+
+uniroot(function(t) model(t)[2] - 0.25, c(0,0.75))$root
+uniroot(function(t) model(t)[2] - 0.25, c(0.75,1.5))$root
+
+#
+d0 <- a3/a2*0.275
+equib <- c(d0*a1/a3,d0*a2/a3)
+b <- c(Kb0,0)-equib
+A <- matrix(c(q1,q2),nrow = 2)
+cs <- solve(A, b)
+cs
+model <- function(t) unname(exp(pars['l1']*t)*cs[1]*q1 + exp(pars['l2']*t)*cs[2]*q2 + equib)
+ts <- seq(0,5,0.01)
+sim <- data.frame(t(as.matrix(data.frame(map(ts, model)))))
+rownames(sim) <- NULL
+colnames(sim) <- c('Blod', 'Væv')
+sim %<>% mutate(t = ts) 
+sim %>% 
+  gather(key='key', value='value', -t) %>% 
+  ggplot(aes(t, value, color=key)) +
+  geom_line() +
+  geom_hline(yintercept = 0.25, color='green', linetype='dashed') +
+  theme(legend.title = element_blank())
+
+uniroot(function(t) model(t)[2] - 0.25, c(0,0.75))$root
+```
+
+
+# R code for question 2
+
+```{r}
+b1 <- 3
+b2 <- -2
+x <- function(t) {
+  b1*exp(-2*t)*cos(2*t) +
+    b2*exp(-2*t)*sin(2*t)
+}
+y <- function(t) {
+  b1*exp(-2*t)*2*sin(2*t) +
+    b2*exp(-2*t)*-2*cos(2*t)
+}
+sim <- data_frame(t = seq(0,pi,by=0.05),
+                  x = x(t),
+                  y = y(t))
+sim %>% ggplot(aes(x,y)) + geom_path()
+sim %>% 
+  gather(key = 'key', value = 'value', -t) %>% 
+  ggplot(aes(t, value, color=key)) +
+  geom_line() +
+  theme(legend.title = element_blank())
+
+solve(matrix(c(-4,-4,1,-4),nrow = 2), c(1,-2))
+```
+
+# R code for question 3
+
+```{r}
+library(tidyverse)
+kg <- 2.2
+kd <- 0.15
+yg <- 0.8
+p0 <- 10
+equib <- c(p0*yg/kd*(1-yg), p0/kg*(1-yg))
+A <- matrix(c(-kg,yg*kg,kd,-kd),nrow=2)
+l1 <- eigen(A)$values[1]
+l2 <- eigen(A)$values[2]
+q1 <- eigen(A)$vectors[1,]
+q2 <- eigen(A)$vectors[2,]
+l1
+l2
+q1
+q2
+cs <- solve(matrix(c(q1,q2),nrow=2), c(2,10)-equib)
+x <- function(t) cs[1]*exp(l1*t)*q1[1] + cs[2]*exp(l2*t)*q2[1] + equib[1]
+y <- function(t) cs[1]*exp(l1*t)*q1[2] + cs[2]*exp(l2*t)*q2[2] + equib[2]
+sim <- data_frame(t = seq(0,220,by=0.05),
+                  WS = x(t),
+                  WG = y(t))
+sim %>% 
+  gather(key = 'key', value = 'value', -t) %>% 
+  ggplot(aes(t, value, color=key)) +
+  geom_line() +
+  geom_hline(yintercept = equib[1], color='green', linetype='dashed') +
+  geom_hline(yintercept = equib[2], color='green', linetype='dashed') +
+  theme(legend.title = element_blank())
+```
+
+

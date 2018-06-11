@@ -1,0 +1,154 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper]{geometry} %page size
+\usepackage{parskip} %no paragraph indentation
+\usepackage{fancyhdr} %fancy stuff in page header
+\pagestyle{fancy} 
+
+\usepackage[utf8]{inputenc} %encoding
+\usepackage[danish]{babel} %danish letters
+
+\usepackage{graphicx} %import pictures
+\graphicspath{ {images/} }
+\usepackage{listings} %make lists
+
+\usepackage{amsmath, amssymb, amsfonts, amsthm, mathtools} %doing math
+\usepackage{algorithmicx, algpseudocode} %doing pseudocode
+
+\title{
+  Title\
+  \large Subtitle
+}
+\author{Asger Andersen}
+\date{\today}
+
+\fancyhead{}
+\lhead{This is the title}
+\rhead{Asger Andersen}
+
+%End of preamble
+%*******************************************************************************
+
+\begin{document}
+
+\section{Diagonalizable matrices}
+
+We say that a $n\times n$ matrix $A$ is diagonalizable, if and only if there exist an invertible matrix $P$, such that $P^{-1}AP$ is a diagonal matrix. This is equivalent to the sum of the dimensions of the eigenspaces of $A$ (in euivalent words: the sum of the geometric multiplicities of the eigenvalues of $A$) being equal to $n$. In that case, we can choose an eigenbasis $q_1,q_2,...,q_n$ for the space $A$ is operating on, and set $P$ to be the matrix with the chosen eigenbasis vectors as columns. Then $P^{-1}AP$ will be a diagonal matrix with the eigenvalues as columns.
+
+If $A$ is hermetian (herunder symmetric), then $A$ is diagonalizable with an orthonormal eigenbasis. Additionally, all the eigenvalues of $A$ are real.
+
+\section{Eigenvalues, eigenvectors and long term behaviour of homogeneous matrix systems}
+
+Consider the system 
+\begin{align}
+x_t = A^t x_0,\qquad A\in \mathbb{R}^{n \times n},\qquad x_0 \in \mathbb{R}^n
+\end{align}
+and assume that $A$ is diagonalizable. Let $\lambda_1,...,\lambda_n$ be the eigenvalues of $A$ (in this notation, some of them might be equal, if $A$ has one or more eigenvalues with eigenspace dimension larger than 1), and let $q_1,...,q_n$ be some corresponding eigenbasis of $\mathbb{R}^n$. We can decompose $x_0$
+\begin{align}
+x_0 = \sum_i c_i q_i
+\end{align}
+whereby we easily get that
+\begin{align}
+x_t = \sum_i \lambda_i^t c_i q_i
+\end{align}
+Assume that $A$ has a dominant eigenvalue $\lambda_j$ (that is, assume that one of the eigenvalues of $A$ are strictly larger in absolute value than all the other eigenvalues of $A$). Let $Q$ be eigenbasis vectors corresponding to $\lambda_j$ (if $\lambda_j$ has geometric multiplicity larger than 1, then there will be more than one vector in $Q$). In that case, we easily get that
+\begin{align}
+\frac{x_t}{\lambda^t} \to \sum_{q_i \in Q} c_i q_i, \qquad t\to \infty
+\end{align}
+If $\lambda_j$ has geometric multiplicity of 1, this simplifies to
+\begin{align}
+\frac{x_t}{\lambda^t} \to c_j q_j, \qquad t\to \infty
+\end{align}
+This means that $\lambda_j$ gives us the long term growth rate of each of the coordinates of $x_t$:
+\begin{align}
+\forall k \in \{1,...,n\}:\quad \frac{(x_{t+1})_k}{(x_{t})_k} \to \lambda_j, \quad t\to \infty
+\end{align}
+and we can also calculate the long term ratio of the coordinates of $x_t$:
+\begin{align}
+\forall k,l \in \{1,...,n\}:\quad \frac{(x_{t})_k}{(x_{t})_l} \to \frac{ \sum_{q_i \in Q} c_i (q_i)_k}{ \sum_{q_i \in Q} c_i (q_i)_l}, \quad t\to \infty
+\end{align}
+If $\lambda_j$ has geometric multiplicity of 1, this simplifies to
+\begin{align}
+\forall k,l \in \{1,...,n\}:\quad \frac{(x_{t})_k}{(x_{t})_l} \to \frac{ (q_i)_k}{ (q_i)_l}, \quad t\to \infty
+\end{align}
+
+\subsection{Eigenvalues and equilibriums of homogeneous matrix system}
+
+A point $x\in \mathbb{R}^n$ is an equilibrium of the system, if and only if
+\begin{align}
+x = Ax
+\end{align}
+It is clear that the zero vector is an equilibrium of any matrix system. It is also clear that the zero vector is a locally stable equilibrium, if and only the dominant eigenvalue $\lambda_j$ is numerically strictly smaller than 1. This is because the dominant eigenvalue is the growth rate that the system tends to over time, and if this growth value is numerically strictly larger than 1, then any other starting point than the zero vector will grow exponentially to infinity. If the dominant eigenvalue and thereby the long term growth rate is equal to 1, then the system has infinitely many equilibriums, namely all the points in the eigenspace of 1. Let $x_0$ be the starting vector, and let it be decomposable in the eigenbasis as
+\begin{align}
+x_0 = \sum_i c_i q_i
+\end{align}
+and let $Q$ be the eigenvectors corresponding to the dominant eigenvalue 1. Then $x_t$ will converge to the equilibrium
+\begin{align}
+x_t \to \sum_{q_i \in Q} c_i q_i, \qquad t\to \infty
+\end{align}
+If the dominant eigenvalue $\lambda_j = 1$ has geometric multiplicity of 1, this simplifies to
+\begin{align}
+x_t \to c_j q_j, \qquad t\to \infty
+\end{align}
+
+\subsection{Perron-Frobenius' theorem \& long-term behaviour of positive, real matrices (hereunder transition matrices)}
+
+Define an $n\times n$ (not necessarily or even real) matrix $A$ to be irreducible, if and only if for all $i,j \in \{1,...,n\}$ there exists a $t \in \mathbb{N}$ such that $A^t_{ij}\neq 0$. (This correponds to the graph of $A$ being strongly connected). It is clear that all matrices with no 0 entries (hereunder all positive matrices) are trivially irreducible.
+
+Define the spectral radius of any square matrix to be the largest absolut value of any of its eigenvalues.
+
+Perron-Frobenius theorem can be stated with weaker consequences for irreducible matrices in general. Here, I will just state it for non-negative, irreducible matrices. 
+
+Let $A$ be a non-negative, irreducible matrix $A$ with spectral radius $r$. Then we have that 
+\begin{itemize}
+\item $r$ is strictly positive, and is the dominant eigenvalue of $A$.
+\item $r$ is a simple eigenvalue, meaning that its eigenspace only has 1 dimension.
+\item There exists an eigenvector $q$ with only strictly positive entries in the eigenspace of $r$
+\item $\frac{1}{\lambda^t} A^t \to C, t\to \infty$ where all the columns of $C$ are multiplums of $q$.
+\end{itemize}
+All in all, this means that we can understand the long term behaviour of matrix systems defined by non-negative, irreducible matrices by just looking at their eigenvalues
+
+For transition matrices we also know that if they are irreducible, then they have a dominant eigenvalue of $1$, meaning that they have infinitely many equilibriums (all the points in the 1-dimensional eigenspace of 1), and that for each starting vector $x_0$, then
+\begin{align}
+x_t \to cq,\qquad t\to \infty
+\end{align}
+where $q$ is some eigenvector in the eigenspace of 1, and $c$ is the proportion of $q$ in $x_0$ in the decomposition of $x_0$ in some basis with $q$ in it. If we pick the eigenvector $q$ be demanding that its coordinates be non-negative and sum to 1, and also only considers starting vectors $x_0$ satisfying the same conditions, then we get that $c=1$ for all $x_0$. Therefore, we get that 
+\begin{align}
+x_t \to q,\qquad t\to \infty
+\end{align}
+This tells us that irreducible transition matrices has a unique probability distribution $q$ that all other probability distributions $x_0$ converge to over time.
+
+Actually, THIS IS WRONG, since a markov chain also has to be aperiodic to converge. Therefore, I think that I have stated the Perron-Frobenius too liberally. We need to assume that there exists a natural number $t$ such that $A^t$ is strictly positive (all the entries need to be simultaniously strictly positive). I think this would correspond to the markov chain being both irreducible and aperiodic.
+
+\section{Long term behaviour of inhomogeneous linear systems}
+
+Let a system be defined by
+\begin{align}
+x_{t+1} = Ax_t + b, \qquad x_0\in \mathbb{R}
+\end{align}
+An equilibrium of the system is any vector that satisfies
+\begin{align}
+x^* = Ax^* + b
+\end{align}
+
+By simple matrix calculations, we get that the system has an equilibrium $x^*$, if and only the matrix $(A - I)$ is invertible. In that case, the system has the unique equilibrium
+\begin{align}
+x^* = -(A-I)^{-1}b
+\end{align}
+This equilibrium is stable, if and only if all the eigenvalues of $A$ is strictly less than 1.
+
+\section{Interpretation}
+
+We can think about a real $n \times n$ matrix $A$ as a real weighted graph with $n$ nodes enumerated from $1,...,n$, where there is a link with weight $a_{ij}$ from node $j$ to node $i$, if and only if $A_{ij} = a_{ij}$. This corresponds to the transposed matrix $A^T$ being the weighted adjencency matrix of this graph. Hereby, we can think of any vector $x_0\in \mathbb{R}^n$ as a configuration of the nodes, and we can think of the vector $Ax_0 \in \mathbb{R}^n$ as the configuration, we would get by letting $x_0$ follow the weighted flow given by the graph. For any $t \in \mathbb{N}_0$, we therefore have that $A^t x_0$ can be interpreted as the configuration, we would get by starting with the configuration $x_0$ and then following $t$ steps of the weighted flow. This is exactly the same as $x_t$ in the particular solution to the homogeneous, linear system of difference equations
+\begin{align}
+\forall t\in \mathbb{N}_0: \quad x_t =  Ax_{t-1}, \quad x_t \in \mathbb{R}^n
+\end{align}
+with the starting condition $x_0\in \mathbb{R}$.
+
+All in all, we can think of the set of all real $n \times n$ matrices, the set of real, homogeneous, linear systems of difference equations with $n$ equations, and the set of real weighted graphs with $n$ enumerated nodes as being in one-to-one correspondence with each other. 
+
+My goal is to interpret eigenvalues, spaces and vectors in the context of these to interpretations of matrices. Also inhomogeneous systems (these can be thought of as arrows comming from nowhere in the graph). And equilibriums and maybe also concepts from network analysis. For instance: communities. Can we think of this concept in terms of some long term dynamics on the network, for instance that diffusion collects the diffused quantity within these communities? Then maybe eigenvalues/vectors can be used to say something about them, since these objects says something about the long term behaviour of the matrix model.
+
+Applied examples: Markov chains. Population dynamics. Wealth dynamics (so we both can have positive and negative numbers in oppose to the other examples).
+
+\end{document}
